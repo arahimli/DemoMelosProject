@@ -1,0 +1,16 @@
+name: demo_melos_workspace
+
+environment:
+  sdk: '>=3.0.1 <4.0.0'
+dev_dependencies:
+  melos: ^3.1.0
+
+
+scripts:
+  analyze:
+    run: melos exec -- flutter analyze .
+    description: Run `dart analyze` in all packages.
+
+  format:
+    run: melos exec -- "flutter format . --set-exit-if-changed"
+    description: Run `dart format .` in all packages
