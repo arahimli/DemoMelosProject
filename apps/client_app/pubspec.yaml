@@ -31,12 +31,22 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_riverpod: ^2.3.6
+
   firebase_core: ^2.13.1
   firebase_crashlytics: ^3.3.2
+  firebase_analytics: ^10.4.2
+  firebase_dynamic_links: ^5.3.2
+
+
+  flutter_secure_storage: ^8.0.0
+
+  http_certificate_pinning: ^2.0.7
+
   core:
     git:
       url: git@github.com:arahimli/DemoMelosProject.git
-      path: core
+      path: features/core
       ref: main
 
   # The following adds the Cupertino Icons font to your application.
