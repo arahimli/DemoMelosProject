@@ -3,3 +3,4 @@ name: demo_melos
 packages:
   - apps/*
   - packages/*
+  - features/*
