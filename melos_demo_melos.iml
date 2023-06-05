@@ -10,6 +10,12 @@
       <excludeFolder url="file://$MODULE_DIR$/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
+      <excludeFolder url="file://$MODULE_DIR$/features/app_theme/build" />
+      <excludeFolder url="file://$MODULE_DIR$/features/app_theme/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/features/app_theme/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/features/localization/build" />
+      <excludeFolder url="file://$MODULE_DIR$/features/localization/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/features/localization/.dart_tool" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Dart SDK" level="project" />

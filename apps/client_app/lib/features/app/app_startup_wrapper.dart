@@ -6,11 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-// import 'injection/blocs.dart';
-// import 'injection/externals.dart';
-// import 'injection/services.dart';
-// import 'injection/utils.dart';
-// import 'presentation/app.dart';
+import '../../injection/externals.dart';
+import 'app.dart';
 
 final initialLinkNotifier = ValueNotifier<String?>(null);
 
@@ -47,17 +44,10 @@ abstract class AppStartupWrapper {
       ],
     );
 
-    // await container.read(appRemoteConfigServiceProvider).activate();
-    // container.read(appRemoteConfigServiceProvider).initialize();
-    //
-    // await container.read(dynamicLinkNotifierProvider.notifier).getInitialLink();
-    // container.read(dynamicLinkNotifierProvider.notifier).registerListener();
-    // container.read(inAppProtectionServiceProvider.notifier).initSecurityState();
-
     runApp(
       UncontrolledProviderScope(
         container: container,
-        child: InsideApp(environment: environment),
+        child: App(environment: environment),
       ),
     );
   }

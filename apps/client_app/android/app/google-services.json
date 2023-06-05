@@ -1,0 +1,39 @@
+{
+  "project_info": {
+      "project_number": "282168043507",
+    "project_id": "fir-melos-project",
+    "storage_bucket": "fir-melos-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282168043507:android:4d999240149f4e883a9486",
+        "android_client_info": {
+          "package_name": "com.example.client_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282168043507-uidj775o9i8hmiollfmvq0rek7phr36i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuJbYiVp-eUbHWYXw-VpdssLM4HqhiOXI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282168043507-uidj775o9i8hmiollfmvq0rek7phr36i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

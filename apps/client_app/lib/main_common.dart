@@ -6,7 +6,7 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'app_startup_wrapper.dart';
+import 'features/app/app_startup_wrapper.dart';
 import 'firebase_options.dart';
 
 void mainCommon(Environment environment, List<Override> overrides) async {
@@ -15,10 +15,11 @@ void mainCommon(Environment environment, List<Override> overrides) async {
       WidgetsFlutterBinding.ensureInitialized();
 
       /// initializes [Firebase] for application
-      // await Firebase.initializeApp(
-      //   options: DefaultFirebaseOptions.currentPlatform,
-      // );
+      await Firebase.initializeApp(
+        // options: DefaultFirebaseOptions.currentPlatform,
+      );
       await AppStartupWrapper.initialize(environment, overrides);
+
     },
     (error, stack) async {
       return FirebaseCrashlytics.instance.recordError(

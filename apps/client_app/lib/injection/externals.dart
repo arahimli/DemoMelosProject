@@ -1,18 +1,15 @@
-import 'package:app_links/app_links.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:core/core.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:http_certificate_pinning/http_certificate_pinning.dart';
 import 'package:local_auth/local_auth.dart';
+// import 'package:http_certificate_pinning/http_certificate_pinning.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../core/app_interceptor.dart';
-import '../env.dart';
 import 'data_sources.dart';
 import 'injection_container.dart';
 
@@ -27,6 +24,7 @@ final localAuthProvider = Provider<LocalAuthentication>((ref) {
 final sharedPrefsProvider = Provider<SharedPreferences>((ref) {
   throw UnimplementedError();
 });
+
 
 final dioProvider = Provider<Dio>(
   (ref) {
@@ -63,12 +61,12 @@ final dioProvider = Provider<Dio>(
 
     dio.interceptors.addAll(
       [
-        CertificatePinningInterceptor(
-          allowedSHAFingerprints: [
-            InsideEnv.insideSSLFingerprint,
-            InsideEnv.infosecSSLFingerprint,
-          ],
-        ),
+        // CertificatePinningInterceptor(
+        //   allowedSHAFingerprints: [
+        //     InsideEnv.insideSSLFingerprint,
+        //     InsideEnv.infosecSSLFingerprint,
+        //   ],
+        // ),
         if (enviroment != Environment.production)
           PrettyDioLogger(
             requestHeader: true,
@@ -93,12 +91,4 @@ final firebaseDynamicLinksProvider = Provider<FirebaseDynamicLinks>((ref) {
 
 final firebaseAnalyticsProvider = Provider<FirebaseAnalytics>((ref) {
   return FirebaseAnalytics.instance;
-});
-
-final appLinksProvider = Provider<AppLinks>((ref) {
-  return AppLinks();
-});
-
-final firebaseFirestoreProvider = Provider<FirebaseFirestore>((ref) {
-  return FirebaseFirestore.instance;
 });
