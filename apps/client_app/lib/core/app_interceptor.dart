@@ -1,4 +1,9 @@
+// ignore_for_file: depend_on_referenced_packages
+
+import 'dart:io';
+
 import 'package:core/core.dart';
+import 'package:core/error/exceptions.dart';
 import 'package:dio/dio.dart';
 import 'package:localization/localization_data_source.dart';
 import 'package:rxdart/rxdart.dart';
@@ -57,6 +62,26 @@ class AppInterceptor extends Interceptor {
       }
     }
 
+    if( err is SocketException ){
+      throw const InternetException();
+    }else if(err.response != null){
+      if(err.response!.statusCode == 500 ){
+        throw InternalServerException(
+            err.response!.data.toString(),
+        );
+      } else if(err.response!.statusCode == 404 ){
+        throw const NotFoundException();
+      } else if(err.response!.statusCode == 401 ){
+        throw const UnauthorizedException();
+      } else if(err.response!.statusCode == 400 ){
+        throw BadRequestException(
+            err.response!.data.toString(),
+        );
+      }
+    }else{
+      throw const OtherException();
+    }
+
     /// for other error cases it will run normally
     handler.next(err);
   }
@@ -64,9 +89,11 @@ class AppInterceptor extends Interceptor {
   Future<Response<dynamic>> _retry(
     RequestOptions requestOptions,
   ) async {
+
     final options = Options(
       method: requestOptions.method,
     );
+
     return dio.request<dynamic>(
       requestOptions.path,
       data: requestOptions.data,

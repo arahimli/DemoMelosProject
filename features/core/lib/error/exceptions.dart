@@ -1,4 +1,8 @@
 
+class CacheException implements Exception {
+  const CacheException();
+}
+
 class NotFoundException implements Exception {
   const NotFoundException();
 }

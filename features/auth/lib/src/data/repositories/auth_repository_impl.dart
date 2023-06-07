@@ -51,9 +51,9 @@ class AuthRepositoryImpl implements AuthRepository {
     } on DioError catch (e) {
       try {
         final message = e.response!.data['message'];
-        return Left(Failure.network(message));
+        return Left(Failure.internalServer(message));
       } catch (_) {
-        return const Left(Failure.network());
+        return const Left(Failure.internalServer());
       }
     } catch (_) {
       return const Left(Failure.other());
@@ -67,7 +67,7 @@ class AuthRepositoryImpl implements AuthRepository {
 
       return const Right(unit);
     } catch (_) {
-      return const Left(Failure.network());
+      return const Left(Failure.internalServer());
     }
   }
 }
