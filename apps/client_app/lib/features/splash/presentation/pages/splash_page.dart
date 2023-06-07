@@ -5,8 +5,8 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: const Placeholder(),
+    return const Scaffold(
+      body: Placeholder(),
     );
   }
 }

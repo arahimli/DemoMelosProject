@@ -28,12 +28,12 @@ final sharedPrefsProvider = Provider<SharedPreferences>((ref) {
 
 final dioProvider = Provider<Dio>(
   (ref) {
-    final enviroment = ref.watch(environmentProvider);
-    Endpoints.environment = enviroment;
+    final environment = ref.watch(environmentProvider);
+    Endpoints.environment = environment;
 
     final dio = Dio()
       ..options = BaseOptions(
-        baseUrl: enviroment == Environment.development
+        baseUrl: environment == Environment.development
             ? Endpoints.devBaseUrl
             : Endpoints.prodBaseUrl,
         // connectTimeout: 60000,
@@ -67,7 +67,7 @@ final dioProvider = Provider<Dio>(
         //     InsideEnv.infosecSSLFingerprint,
         //   ],
         // ),
-        if (enviroment != Environment.production)
+        if (environment != Environment.production)
           PrettyDioLogger(
             requestHeader: true,
             requestBody: true,

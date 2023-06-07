@@ -4,11 +4,11 @@ import 'package:equatable/equatable.dart';
 
 import '../either/either.dart';
 
-abstract class Usecase<Error, Success, Params> {
+abstract class UseCase<Error, Success, Params> {
   Either<Error, Success> call(Params params);
 }
 
-abstract class AsyncUsecase<Error, Success, Params> {
+abstract class AsyncUseCase<Error, Success, Params> {
   Future<Either<Error, Success>> call(Params params);
 }
 

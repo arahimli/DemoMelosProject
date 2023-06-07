@@ -52,7 +52,7 @@ class App extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final appRouter = ref.read(appRouterProvider).router;
     // final isAppSecure = ref.watch(inAppProtectionServiceProvider);
-
+    //
     // ref.listen<AuthState>(
     //   authFlowNotifierProvider,
     //   (previous, next) {

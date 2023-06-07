@@ -4,7 +4,7 @@ String _kLocale = 'locale';
 
 abstract class LocalizationDataSource {
   String? get locale;
-  Future<void> persistLocale(String langaugeCode);
+  Future<void> persistLocale(String languageCode);
 }
 
 class LocalizationDataSourceImpl implements LocalizationDataSource {
@@ -16,7 +16,7 @@ class LocalizationDataSourceImpl implements LocalizationDataSource {
   String? get locale => sharedPreferences.getString(_kLocale);
 
   @override
-  Future<void> persistLocale(String langaugeCode) {
-    return sharedPreferences.setString(_kLocale, langaugeCode);
+  Future<void> persistLocale(String languageCode) {
+    return sharedPreferences.setString(_kLocale, languageCode);
   }
 }
