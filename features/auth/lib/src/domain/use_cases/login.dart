@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 
 import '../repositories/auth_repository.dart';
 
-class Login extends AsyncUsecase<Failure<String?>, Unit, LoginParams> {
+class Login extends AsyncUseCase<Failure<String?>, Unit, LoginParams> {
   Login(this.authRepository);
 
   final AuthRepository authRepository;

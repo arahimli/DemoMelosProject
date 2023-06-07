@@ -15,7 +15,7 @@ dependencies:
   core:
     git:
       url: git@github.com:AzDigitalLab/Inside.git
-      path: core
+      path: features/core
       ref: main
   localization:
     git:

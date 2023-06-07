@@ -28,11 +28,9 @@ packages:
   app_theme:
     dependency: "direct main"
     description:
-      path: "features/app_theme"
-      ref: main
-      resolved-ref: "13edcc01b8cd30d1a608620a38a64a0956f3c2a5"
-      url: "git@github.com:arahimli/DemoMelosProject.git"
-    source: git
+      path: "../../features/app_theme"
+      relative: true
+    source: path
     version: "0.0.1"
   args:
     dependency: transitive
@@ -173,11 +171,9 @@ packages:
   core:
     dependency: "direct main"
     description:
-      path: "features/core"
-      ref: main
-      resolved-ref: "13edcc01b8cd30d1a608620a38a64a0956f3c2a5"
-      url: "git@github.com:arahimli/DemoMelosProject.git"
-    source: git
+      path: "../../features/core"
+      relative: true
+    source: path
     version: "1.0.0"
   crypto:
     dependency: transitive
@@ -570,11 +566,9 @@ packages:
   localization:
     dependency: "direct main"
     description:
-      path: "features/localization"
-      ref: main
-      resolved-ref: "13edcc01b8cd30d1a608620a38a64a0956f3c2a5"
-      url: "git@github.com:arahimli/DemoMelosProject.git"
-    source: git
+      path: "../../features/localization"
+      relative: true
+    source: path
     version: "1.0.0"
   logging:
     dependency: transitive

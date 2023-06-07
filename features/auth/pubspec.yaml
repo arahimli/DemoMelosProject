@@ -17,12 +17,12 @@ dependencies:
   core:
     git:
       url: git@github.com:AzDigitalLab/Inside.git
-      path: core
+      path: features/core
       ref: main
   auth_middleware:
     git:
       url: git@github.com:AzDigitalLab/Inside.git
-      path: auth_middleware
+      path: features/auth_middleware
       ref: main
 
 dev_dependencies:

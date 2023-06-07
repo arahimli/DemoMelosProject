@@ -2,7 +2,7 @@ import 'package:core/core.dart';
 
 import '../repositories/auth_repository.dart';
 
-class LogOut extends AsyncUsecase<Failure, Unit, NoParams> {
+class LogOut extends AsyncUseCase<Failure, Unit, NoParams> {
   LogOut(this.authRepository);
 
   final AuthRepository authRepository;

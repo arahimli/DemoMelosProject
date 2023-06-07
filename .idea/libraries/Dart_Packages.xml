@@ -30,13 +30,6 @@
             </list>
           </value>
         </entry>
-        <entry key="app_theme">
-          <value>
-            <list>
-              <option value="$USER_HOME$/.pub-cache/git/DemoMelosProject-13edcc01b8cd30d1a608620a38a64a0956f3c2a5/features/app_theme/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="args">
           <value>
             <list>
@@ -182,13 +175,6 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/convert-3.1.1/lib" />
-            </list>
-          </value>
-        </entry>
-        <entry key="core">
-          <value>
-            <list>
-              <option value="$USER_HOME$/.pub-cache/git/DemoMelosProject-13edcc01b8cd30d1a608620a38a64a0956f3c2a5/features/core/lib" />
             </list>
           </value>
         </entry>
@@ -540,13 +526,6 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/local_auth_windows-1.0.8/lib" />
-            </list>
-          </value>
-        </entry>
-        <entry key="localization">
-          <value>
-            <list>
-              <option value="$USER_HOME$/.pub-cache/git/DemoMelosProject-13edcc01b8cd30d1a608620a38a64a0956f3c2a5/features/localization/lib" />
             </list>
           </value>
         </entry>
@@ -984,9 +963,6 @@
       </option>
     </properties>
     <CLASSES>
-      <root url="file://$USER_HOME$/.pub-cache/git/DemoMelosProject-13edcc01b8cd30d1a608620a38a64a0956f3c2a5/features/app_theme/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/git/DemoMelosProject-13edcc01b8cd30d1a608620a38a64a0956f3c2a5/features/core/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/git/DemoMelosProject-13edcc01b8cd30d1a608620a38a64a0956f3c2a5/features/localization/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/_fe_analyzer_shared-61.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/_flutterfire_internals-1.3.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/analyzer-5.13.0/lib" />
