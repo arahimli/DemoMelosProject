@@ -1,4 +1,4 @@
-name: auth_middleware
+name: auth
 description: A new Flutter package project.
 version: 1.0.0
 publish_to: "none"
@@ -10,22 +10,19 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dio: ^5.1.2
-  rxdart: ^0.27.7
+  flutter_riverpod: ^2.3.4
+  dio: ^5.1.1
+  equatable: ^2.0.5
+  flutter_secure_storage: ^8.0.0
   core:
     git:
       url: git@github.com:AzDigitalLab/Inside.git
       path: core
       ref: main
-  localization:
+  auth_middleware:
     git:
       url: git@github.com:AzDigitalLab/Inside.git
-      path: features/localization
-      ref: main
-  auth:
-    git:
-      url: git@github.com:AzDigitalLab/Inside.git
-      path: features/auth
+      path: auth_middleware
       ref: main
 
 dev_dependencies:
