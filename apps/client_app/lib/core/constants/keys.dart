@@ -9,18 +9,3 @@ abstract class PreferencesKeys {
   static const String recentEmployees = 'recentEmployees';
   static const String email = 'email';
 }
-
-enum HttpMethods { get, put, post }
-
-extension HttpMethodsToStringExt on HttpMethods {
-  String get stringify {
-    switch (this) {
-      case HttpMethods.put:
-        return 'PUT';
-      case HttpMethods.post:
-        return 'POST';
-      default:
-        return 'GET';
-    }
-  }
-}
