@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../constants/themes.dart';
+import '../../core/constants/themes.dart';
 import '../../injection/blocs.dart';
 import '../../injection/injection_container.dart';
 

@@ -3,7 +3,6 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../features/main/presentation/pages/main_page.dart';
 import '../features/splash/presentation/pages/splash_page.dart';
 import 'app_routes.dart';
 

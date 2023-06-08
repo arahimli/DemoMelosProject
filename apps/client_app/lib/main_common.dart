@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'features/app/app_startup_wrapper.dart';
-import 'firebase_options.dart';
+// import 'firebase_options.dart';
 
 void mainCommon(Environment environment, List<Override> overrides) async {
   runZonedGuarded<Future<void>>(

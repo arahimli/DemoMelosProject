@@ -29,6 +29,6 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 
-# Flutter/Dart/Pub related
+# Untracked paths
 local_files/
 

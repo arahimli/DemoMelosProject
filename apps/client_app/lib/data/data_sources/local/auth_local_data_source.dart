@@ -1,7 +1,7 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:local_auth/local_auth.dart';
 
-import '../../../../constants/keys.dart';
+import '../../../core/constants/keys.dart';
 
 abstract class AuthLocalDataSource {
   Future<void> persistRefreshToken(String token);
