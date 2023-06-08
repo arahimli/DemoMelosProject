@@ -1,19 +1,39 @@
+import 'package:core/core.dart';
 import 'package:meta/meta.dart';
+
+// # An Example for ---
+call() async{
+  final result = await getResult();
+
+  result.when(error: (er){
+
+  }, success: (su){
+
+  });
+
+}
+
+class Success {}
+
+Future<Either<Failure, Success>> getResult() async {
+  try {
+    return Left(Failure.internalServer());
+  } catch(_) {
+    return Right(Success());
+  }
+}
+
+// # An Example for ---
+
+
 
 typedef OnError<E> = void Function(E error);
 typedef OnSuccess<S> = void Function(S success);
 
-@sealed
-abstract class Either<E, S> {
+sealed class Either<E, S>  {
+
   const Either();
 
-  E? getError();
-
-  S? getSuccess();
-
-  bool isError();
-
-  bool isSuccess();
 
   void when({
     required OnError<E> error,
@@ -21,57 +41,10 @@ abstract class Either<E, S> {
   });
 }
 
-@immutable
-class Right<E, S> implements Either<E, S> {
-  const Right(this._success);
+final class Left<E, S> extends Either<E, S> {
+  Left(this._error);
 
-  final S _success;
-
-  @override
-  bool isError() => false;
-
-  @override
-  bool isSuccess() => true;
-
-  @override
-  E? getError() => null;
-
-  @override
-  S? getSuccess() => _success;
-
-  @override
-  void when({
-    required OnError<E> error,
-    required OnSuccess<S> success,
-  }) {
-    success(_success);
-  }
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) || other is Right && other._success == _success;
-
-  @override
-  int get hashCode => _success.hashCode;
-}
-
-@immutable
-class Left<E, S> implements Either<E, S> {
-  const Left(this._error);
-
-  final E _error;
-
-  @override
-  bool isError() => true;
-
-  @override
-  bool isSuccess() => false;
-
-  @override
-  E? getError() => _error;
-
-  @override
-  S? getSuccess() => null;
+  E _error;
 
   @override
   void when({
@@ -80,13 +53,20 @@ class Left<E, S> implements Either<E, S> {
   }) {
     error(_error);
   }
+}
+
+final class Right<E, S> extends Either<E,S> {
+  Right(this._success);
+
+  S _success;
 
   @override
-  bool operator ==(Object other) =>
-      identical(this, other) || other is Left && other._error == _error;
-
-  @override
-  int get hashCode => _error.hashCode;
+  void when({
+    required OnError<E> error,
+    required OnSuccess<S> success,
+  }) {
+    success(_success);
+  }
 }
 
 @immutable

@@ -20,7 +20,7 @@ class AuthRepositoryImpl implements AuthRepository {
       final accessToken = await authLocalDataSource.accessToken;
 
       if (accessToken == null) {
-        return const Right(false);
+        return Right(false);
       }
 
       final isAuthenticated =
@@ -28,7 +28,7 @@ class AuthRepositoryImpl implements AuthRepository {
 
       return Right(isAuthenticated);
     } catch (_) {
-      return const Left(Failure.cache());
+      return Left(Failure.cache());
     }
   }
 
@@ -47,16 +47,16 @@ class AuthRepositoryImpl implements AuthRepository {
         result.refreshToken,
       );
 
-      return const Right(unit);
+      return Right(unit);
     } on DioError catch (e) {
       try {
         final message = e.response!.data['message'];
         return Left(Failure.internalServer(message));
       } catch (_) {
-        return const Left(Failure.internalServer());
+        return Left(Failure.internalServer());
       }
     } catch (_) {
-      return const Left(Failure.other());
+      return Left(Failure.other());
     }
   }
 
@@ -65,9 +65,9 @@ class AuthRepositoryImpl implements AuthRepository {
     try {
       await authLocalDataSource.clearTokens();
 
-      return const Right(unit);
+      return Right(unit);
     } catch (_) {
-      return const Left(Failure.internalServer());
+      return Left(Failure.internalServer());
     }
   }
 }

@@ -31,13 +31,16 @@ class AuthNotifier extends ChangeNotifier {
   Future<AuthState> checkAuth() async {
     final result = await isAuthenticated(NoParams());
 
-    if (result.isSuccess()) {
-      final isAuthenticated = result.getSuccess()!;
-      authState =
-          isAuthenticated ? AuthState.authenticated : AuthState.unAuthenticated;
-    } else {
-      authState = AuthState.unAuthenticated;
-    }
+    result.when(
+      success: (success){
+        final isAuthenticated = success;
+        authState =
+        isAuthenticated ? AuthState.authenticated : AuthState.unAuthenticated;
+      },
+      error: (_){
+        authState = AuthState.unAuthenticated;
+      },
+    );
 
     notifyListeners();
     return authState;
